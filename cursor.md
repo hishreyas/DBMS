@@ -176,7 +176,7 @@ marks_ = marks_ + data.marks;
 end loop;
 
 if counts!=0 then
-raise notice "student =% total=% percentage=% ",data1.name,marks,marks/count;
+raise notice "student =% total=% percentage=% ",data1.name,marks_,marks_/count;
 
 end if;
 
