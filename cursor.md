@@ -74,9 +74,11 @@ temp:=data1.no_of_share;
 
 if data1.cname<>data2.cname then
 
-update cur_per set no_of_share=0 where pname=data1.pname and cname=data1.cname;
+update cur_per set no_of_share=0 where pname=data1.pname and
+ cname=data1.cname;
 
-update cur_per set no_of_share=no_of_share +temp where pname=data2.pname and cname=data2.cname;
+update cur_per set no_of_share=no_of_share +temp where pname=data2.pname and
+ cname=data2.cname;
 
 end if;
 
