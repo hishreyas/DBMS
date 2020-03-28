@@ -50,7 +50,7 @@ $$
 language'plpgsql';
 
 ```
-
+***
 ### set B
 
 **Question a**
@@ -74,18 +74,16 @@ temp:=data1.no_of_share;
 
 if data1.cname<>data2.cname then
 
-update cur_per set no_of_share=0 where pname=data1.pname and
- cname=data1.cname;
+update cur_per set no_of_share=0 where pname=data1.pname and cname=data1.cname;
 
-update cur_per set no_of_share=no_of_share +temp where pname=data2.pname and
- cname=data2.cname;
+update cur_per set no_of_share=no_of_share +temp where pname=data2.pname and cname=data2.cname;
 
 end if;
 
 end loop;
 end loop;
 
-raise notice "Share Transfered successfully ";
+raise notice 'Share Transfered successfully ';
 
 end;
 
@@ -117,17 +115,16 @@ total:=total+temp*data2.no_of_share;
 
 end loop;
 
-raise notice "Investor=% total invested value=%",data1.pname,total;
+raise notice 'Investor=% total invested value=%',data1.pname,total;
 
 end loop;
 
-raise notice "Share Transfered successfully ";
 
 end;
 
 ```
 
-
+***
 
 #### Set C:
 
@@ -145,7 +142,7 @@ begin
 
 for data in result loop
 
-raise notice "name=%  subject=%  marks=%",data.name,data.subject_name,data.marks;
+raise notice 'name=%  subject=%  marks=%',data.name,data.subject_name,data.marks;
 
 end loop;
 end;
@@ -178,7 +175,7 @@ marks_ = marks_ + data.marks;
 end loop;
 
 if counts!=0 then
-raise notice "student =% total=% percentage=% ",data1.name,marks_,marks_/count;
+raise notice 'student =% total=% percentage=% ',data1.name,marks,marks/count;
 
 end if;
 
