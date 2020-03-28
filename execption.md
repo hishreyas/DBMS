@@ -38,8 +38,12 @@ begin
 for data in result loop
 
 if data.lmtapproved<10000 then
+
 raise notice 'Loan approved amount is less than 10000';
+
 end if;
+
+update loan_app set lmtapproved=lmtapproved+lmtapproved*0.2 where lno=data.lno;
 
 end loop;
 
